@@ -1,0 +1,228 @@
+
+.slide-content {
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+}
+.slide-content .text-content.left-align {
+  order: 2; /* Change the order to 2 to align text content to the left */
+  
+}
+
+
+.slide-content .content {
+  display: flex;
+  justify-content: space-between;
+}
+.slide-content .text-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  color: #dc310a;
+}
+
+.slide-content h1 {
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  margin-bottom: 20px;
+}
+.slide-content .image-content {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.slide-content .image-content img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+}
+.slide-content img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.slide-content button {
+  padding: 10px 20px;
+  background-color: #ff5733;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.slide-content button:hover {
+  background-color: #e04425;
+}
+
+
+.custom-carousel-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+
+.slick-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slick-dots li {
+  margin: 0 3px;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 2px solid transparent; /* Add border */
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.slick-dots li button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 19px;
+  height: 19px;
+  background-color: #5a5454; 
+
+  transition: background-color 0.3s ease; /* Add transition for smoother color change */
+}
+
+.slick-dots li.slick-active button::before {
+  background-color: #ffffff; /* Change color of active bullet */
+}
+
+.arrow-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-carousel-wrapper:hover .arrow-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.arrow-container {
+  visibility: hidden;
+  opacity: 0; /* Initially set opacity to 0 */
+  transition: opacity 0.2s ease; 
+}
+
+.custom-carousel-wrapper:hover .arrow-container {
+  visibility: visible;
+  opacity: 1; 
+}
+
+
+
+
+/* Default styles */
+.contentWrap {
+  padding: 80px;
+}
+
+.text-content h1,
+.text-content p {
+  font-size: clamp(1rem, 2vw, 1.5rem); /* Responsive font size */
+}
+
+.image-content img {
+  border-radius: 10px;
+}
+
+.button-container button {
+  font-size: 1.2em;
+}
+
+/* Media queries for enhanced responsiveness */
+@media screen and (max-width: 1200px) {
+  .contentWrap {
+    width: 100%;
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+  
+  .text-content {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contentWrap {
+    width: 100%;
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contentWrap {
+    width: 100%; /* Take full width */
+    padding: 0; /* Remove padding */
+    box-sizing: border-box; 
+  }
+  .text-content h1,
+  .text-content p {
+    font-size: clamp(0.8rem, 2vw, 1.2rem); /* Adjust font size for smaller screens */
+  }
+  
+  .button-container button {
+    font-size: 1em; /* Adjust button font size for smaller screens */
+  }
+  .slide-content{
+    height: 400px;
+
+  }
+  .custom-carousel-wrapper:hover .arrow-container {
+    visibility: hidden;
+  }
+  .custom-carousel-wrapper{
+    margin-bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contentWrap {
+    width: 100%; /* Take full width */
+    padding: 0; /* Remove padding */
+    box-sizing: border-box; 
+  }
+
+  .custom-carousel-wrapper:hover .arrow-container {
+    visibility: hidden;
+  }
+  .slide-content{
+    height: 270px;
+
+  }
+
+  .custom-carousel-wrapper{
+    margin-bottom: 120px;
+  }
+
+}
+
